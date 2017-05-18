@@ -21,8 +21,7 @@ gulp.task('sass', function() {
 // use browserSync to refresh the browser using the contents of the app folder
 gulp.task('browserSync', function() {
   browserSync.init({
-        injectChanges: true,
-
+    injectChanges: true,
     server: {
       baseDir: 'app'
     },
@@ -34,4 +33,9 @@ gulp.task('browserSync', function() {
 gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
   gulp.watch('app/*.html', browserSync.reload); 
+  gulp.watch('app/js/*.js', browserSync.reload); 
 })
+
+// refer to evalue.
+// recompile js before wathcing
+// add a manifest.js file
