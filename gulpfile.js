@@ -6,6 +6,10 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 // enable useref in order to concatonate multiple files into one
 var useref = require('gulp-useref');
+// minimises js files
+var uglify = require('gulp-uglify');
+// ensures that only js files are minified
+var gulpIf = require('gulp-if');
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -29,9 +33,12 @@ gulp.task('browserSync', function() {
   })
 })
 
+// concatonates files and dumps them in the dist folder
 gulp.task('useref', function(){
   return gulp.src('app/*.html')
     .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
 });
 
