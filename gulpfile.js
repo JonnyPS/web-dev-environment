@@ -39,6 +39,7 @@ gulp.task('useref', function(){
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.css', uglify()))
     .pipe(gulp.dest('dist'))
 });
 
@@ -52,4 +53,8 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 // refer to evalue.
 // recompile js before wathcing
 // add a manifest.js file
+
+// running 'gulp' will run the gulp default task.
+// this in turn can run all the other gulp tasks if the user defines them
+gulp.task('default', ['watch']);
 
