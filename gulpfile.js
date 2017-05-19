@@ -12,6 +12,10 @@ var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 // minimises css files
 var cssnano = require('gulp-cssnano');
+// minimises pictures
+var imagemin = require('gulp-imagemin');
+// to speed up image compression, gulp-cache doesn't compress images that haven't been changed since last compression
+var cache = require('gulp-cache');
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -45,6 +49,13 @@ gulp.task('useref', function(){
     .pipe(gulp.dest('dist'))
 });
 
+// selects all images in the images folder and child directories, and minimises them before dumping them into the dist folder
+gulp.task('images', function(){
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+  .pipe(cache(imagemin()))
+  .pipe(gulp.dest('dist/images'))
+});
+
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
@@ -58,5 +69,5 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 
 // running 'gulp' will run the gulp default task.
 // this in turn can run all the other gulp tasks if the user defines them
-gulp.task('default', ['watch', 'useref']);
+gulp.task('default', ['watch', 'useref', 'images']);
 

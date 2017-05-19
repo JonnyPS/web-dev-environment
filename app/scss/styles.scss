@@ -1,9 +1,17 @@
+$fontFamily: helvetica, arial, sans-serif;
+
 .testing {
   width: percentage(2/7);
 }
 
 h2 {
-  color: green;
+  font-family: $fontFamily;
+  color: #000;
   background-color: yellow;
   padding-left: 20px;
+}
+
+#turtle {
+  width: 150px;
+  height:150px;
 }

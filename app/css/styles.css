@@ -2,6 +2,11 @@
   width: 28.57143%; }
 
 h2 {
-  color: green;
+  font-family: helvetica, arial, sans-serif;
+  color: #000;
   background-color: yellow;
   padding-left: 20px; }
+
+#turtle {
+  width: 150px;
+  height: 150px; }
