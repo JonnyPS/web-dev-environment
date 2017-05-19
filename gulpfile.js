@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 // enable browser-sync
 var browserSync = require('browser-sync').create();
+// enable useref in order to concatonate multiple files into one
+var useref = require('gulp-useref');
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -17,7 +19,6 @@ gulp.task('sass', function() {
   }))
 });
 
-
 // use browserSync to refresh the browser using the contents of the app folder
 gulp.task('browserSync', function() {
   browserSync.init({
@@ -28,6 +29,11 @@ gulp.task('browserSync', function() {
   })
 })
 
+gulp.task('useref', function(){
+  return gulp.src('app/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('dist'))
+});
 
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['browserSync', 'sass'], function() {
@@ -39,3 +45,4 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 // refer to evalue.
 // recompile js before wathcing
 // add a manifest.js file
+
