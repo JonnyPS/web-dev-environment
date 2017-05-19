@@ -10,6 +10,8 @@ var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 // ensures that only js files are minified
 var gulpIf = require('gulp-if');
+// minimises css files
+var cssnano = require('gulp-cssnano');
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -39,7 +41,7 @@ gulp.task('useref', function(){
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', uglify()))
+    .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
 });
 
@@ -56,5 +58,5 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 
 // running 'gulp' will run the gulp default task.
 // this in turn can run all the other gulp tasks if the user defines them
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'useref']);
 
