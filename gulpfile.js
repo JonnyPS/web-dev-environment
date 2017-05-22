@@ -16,6 +16,12 @@ var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 // to speed up image compression, gulp-cache doesn't compress images that haven't been changed since last compression
 var cache = require('gulp-cache');
+// allows gulp to return a file
+var data = require('gulp-data');
+var swig = require('gulp-swig');
+
+var nunjucksRender = require('gulp-nunjucks-render');
+
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -41,7 +47,7 @@ gulp.task('browserSync', function() {
 
 // concatonates files and dumps them in the dist folder
 gulp.task('useref', function(){
-  return gulp.src('app/*.html')
+  return gulp.src('app/templates/*.+(html|nunjucks)')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
@@ -56,10 +62,24 @@ gulp.task('images', function(){
   .pipe(gulp.dest('dist/images'))
 });
 
+
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('app'))
+});
+
+
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
-gulp.task('watch', ['browserSync', 'sass'], function() {
+gulp.task('watch', ['browserSync', 'sass', 'nunjucks'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
-  gulp.watch('app/*.html', browserSync.reload); 
+  gulp.watch('app/pages/*.+(html|nunjucks)', browserSync.reload); 
+  gulp.watch('app/templates/*.+(html|nunjucks)', browserSync.reload); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
 
