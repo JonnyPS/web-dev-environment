@@ -20,6 +20,9 @@
 
     <!-- You write code for this content block in another file -->
     {% block content %} {% endblock %}
+
+    <p>{{ images[0].src }}</p>
+
     
   </body>
 </html>

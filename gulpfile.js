@@ -64,14 +64,15 @@ gulp.task('images', function(){
 
 
 gulp.task('nunjucks', function() {
-  // Gets .html and .nunjucks files in pages
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
-  // Renders template with nunjucks
-  .pipe(nunjucksRender({
+    // Adding data to Nunjucks
+    .pipe(data(function() {
+      return require('./app/content/data.json')
+    }))
+    .pipe(nunjucksRender({
       path: ['app/templates']
     }))
-  // output files in app folder
-  .pipe(gulp.dest('app'))
+    .pipe(gulp.dest('app'))
 });
 
 
