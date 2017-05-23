@@ -22,6 +22,8 @@ var swig = require('gulp-swig');
 
 var nunjucksRender = require('gulp-nunjucks-render');
 
+var archiver = require('gulp-archiver');
+var i = 1;
 
 
 
@@ -49,11 +51,11 @@ gulp.task('browserSync', function() {
 
 // concatonates files and dumps them in the dist folder
 gulp.task('useref', function(){
-  return gulp.src('app/templates/*.+(html|nunjucks)')
+  return gulp.src('app/*.html')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
-    .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
+    // .pipe(gulpIf('*.js', uglify()))
+    // .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
 });
 
@@ -66,13 +68,13 @@ gulp.task('images', function(){
 
 
 gulp.task('nunjucks', function() {
-  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  return gulp.src('app/*.+(html|nunjucks)')
     // Adding data to Nunjucks
     .pipe(data(function() {
       return require('./app/content/data.json')
     }))
     .pipe(nunjucksRender({
-      path: ['app/templates']
+      path: ['app']
     }))
     .pipe(gulp.dest('app'))
     .pipe(gulp.dest('dist'))
@@ -81,11 +83,18 @@ gulp.task('nunjucks', function() {
     }))
 });
 
+gulp.task('zip', function () {
+    return gulp.src('app/**')
+        .pipe(archiver('archive' + i + '.zip'))
+        .pipe(gulp.dest('./dist'));
+});
+
 
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['browserSync', 'sass', 'nunjucks'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
   gulp.watch(['app/pages/*.+(html|nunjucks)', 'app/templates/*.+(html|nunjucks)'], ['nunjucks']); 
+
   // gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
