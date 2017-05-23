@@ -22,6 +22,8 @@ var swig = require('gulp-swig');
 
 var nunjucksRender = require('gulp-nunjucks-render');
 
+var archiver = require('gulp-archiver');
+var i = 1;
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -76,6 +78,12 @@ gulp.task('nunjucks', function() {
     .pipe(browserSync.reload({
       stream: true
     }))
+});
+
+gulp.task('zip', function () {
+    return gulp.src('app/**')
+        .pipe(archiver('archive' + i + '.zip'))
+        .pipe(gulp.dest('./dist'));
 });
 
 
