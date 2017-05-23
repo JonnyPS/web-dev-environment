@@ -23,6 +23,8 @@ var swig = require('gulp-swig');
 var nunjucksRender = require('gulp-nunjucks-render');
 
 
+
+
 gulp.task('sass', function() {
   // return any scss files in the scss folder
   return gulp.src('app/scss/*.scss')
@@ -73,6 +75,7 @@ gulp.task('nunjucks', function() {
       path: ['app/templates']
     }))
     .pipe(gulp.dest('app'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true
     }))

@@ -1,5 +1,5 @@
 <!-- index.nunjucks -->
-{% extends "layout.nunjucks" %}
+{% extends "layout.html" %}
 
 {% block content %}
 
