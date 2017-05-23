@@ -24,6 +24,6 @@
     <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p>
 
-    
+  
   </body>
 </html>
