@@ -73,14 +73,17 @@ gulp.task('nunjucks', function() {
       path: ['app/templates']
     }))
     .pipe(gulp.dest('app'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 });
 
 
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['browserSync', 'sass', 'nunjucks'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
-  gulp.watch('app/pages/*.+(html|nunjucks)', browserSync.reload); 
-  gulp.watch('app/templates/*.+(html|nunjucks)', browserSync.reload); 
+  gulp.watch('[app/pages/*.+(html|nunjucks)', 'app/templates/*.+(html|nunjucks)'], ['nunjucks']); 
+  // gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
 
