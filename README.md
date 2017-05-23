@@ -2,10 +2,11 @@
 
 This will develop over time but currently includes the following features.
 
-Uses Gulp task runner to:
-
-- Compile SASS
-- Minify CSS and Javascript
-- Concatonate multiple Javascript files
-- Compress images
-- exports finished output to a different directory
+- Uses Gulp task runner to:
+  - Compile SASS
+  - Minify CSS and Javascript
+  - Concatonate multiple Javascript files
+  - Compress images
+  - exports finished output to a different directory
+- Live reloading with BrowserSync
+- Integration of Nunjucks templating language to import JSON data in to HTML
