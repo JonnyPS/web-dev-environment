@@ -11,14 +11,14 @@ This will develop over time but currently includes the following features.
 - Live reloading with BrowserSync
 - Integration of Nunjucks templating language to import JSON data in to HTML
 
-### Gulp tasks
+## Gulp tasks
 
-##### Gulp Watch
+### Gulp Watch
 
 Run **gulp watch** in the terminal to start browserSync, and watch for any changes to the sass, js or nunjucks templates
 The browser will refresh to render the new view upon any change
 
-##### Gulp build
+### Gulp build
 
 Run **gulp build** in the terminal once you're ready to deploy the project.
 This ensures everything is optimised.
