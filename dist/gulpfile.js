@@ -50,14 +50,21 @@ gulp.task('browserSync', function() {
   })
 })
 
+gulp.task('issue', () =>
+    gulp.src('gulpfile.js')
+        .pipe(debug({title: 'unicorn:'}))
+        .pipe(gulp.dest('dist'))
+);
+
 // concatonates files and dumps them in the dist folder
 gulp.task('useref', function(){
-  return gulp.src('app/index.html')
-  .pipe(useref())
-  // // Minifies only if it's a JavaScript file
-  .pipe(gulpIf('*.js', uglify()))
-  .pipe(gulpIf('*.css', cssnano()))
-  .pipe(gulp.dest('dist'))
+  return gulp.src('app/templates*.+(html|nunjucks)')
+
+    .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    // .pipe(gulpIf('*.js', uglify()))
+    // .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulp.dest('dist'))
 });
 
 // selects all images in the images folder and child directories, and minimises them before dumping them into the dist folder
@@ -86,8 +93,8 @@ gulp.task('nunjucks', function() {
 
 gulp.task('zip', function () {
     return gulp.src('app/**')
-    .pipe(archiver('archive' + i + '.zip'))
-    .pipe(gulp.dest('./dist'));
+        .pipe(archiver('archive' + i + '.zip'))
+        .pipe(gulp.dest('./dist'));
 });
 
 
@@ -95,6 +102,7 @@ gulp.task('zip', function () {
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
   gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
+
   // gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
