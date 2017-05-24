@@ -7,7 +7,8 @@ This will develop over time but currently includes the following features.
   - Minify CSS and Javascript
   - Concatonate multiple Javascript files
   - Compress images
-  - exports finished output to a different directory
+  - Exports finished output to a different directory
+  - Zips all content ready for publication
 - Live reloading with BrowserSync
 - Integration of Nunjucks templating language to import JSON data in to HTML
 
