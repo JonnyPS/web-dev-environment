@@ -16,8 +16,8 @@ This will develop over time but currently includes the following features.
 Clone this project to your local environment.
 Open terminal and run **gulp watch** to get started.
 
-**Folder Structure**<br>
-Work only in the *app* folder.<br>
+### Folder Structure
+The *app* folder is used for development purposes only.<br>
 When ready for publication use only the contents of the *dist* folder.
 
 ### Gulp Watch
