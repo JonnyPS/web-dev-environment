@@ -1,4 +1,5 @@
 {
+	"projectName": "MyUniqueProjectName",
   "images": [{
     "src": "image-one.png",
     "alt": "Image one alt text"

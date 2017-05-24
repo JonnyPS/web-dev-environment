@@ -86,7 +86,10 @@ gulp.task('nunjucks', function() {
 
 gulp.task('zip', function () {
     return gulp.src('app/**')
-    .pipe(archiver('archive' + i + '.zip'))
+    .pipe(data(function() {
+      return require('./app/content/data.json')
+    }))
+    .pipe(archiver(projectName + '.zip'))
     .pipe(gulp.dest('./dist'));
 });
 

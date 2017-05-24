@@ -1,4 +1,4 @@
-# A simple web development work environment to speed up your process.
+# A simple web development work environment to speed up general processes.
 
 This will develop over time but currently includes the following features.
 
