@@ -18,7 +18,7 @@ Open terminal and run **gulp watch** to get started.
 
 ### Folder Structure
 The *app* folder is used for development purposes only.<br>
-When ready for publication use only the contents of the *dist* folder.
+The *dist* folder is used for publication only.
 
 ### Gulp Watch
 
