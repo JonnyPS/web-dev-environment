@@ -17,6 +17,9 @@
     <div id="demo"></div>
     <p>This is a para</p>
     <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
+    <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
+    <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
+    <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
 
 
 
@@ -33,48 +36,30 @@
     <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
-
-    <p>{{ images[0].src }}</p>
+  <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
  
     <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-
-    <p>{{ images[0].src }}</p>
+  <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
  
     <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-
-    <p>{{ images[0].src }}</p>
+  <p>{{ images[0].src }}</p>
     <p>{{ images[0].alt }}</p> 
  
 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
  
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
+
+
+
 
   
   </body>

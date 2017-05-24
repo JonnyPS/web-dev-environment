@@ -1,5 +1,4 @@
 {
-	// projectName will be the name of the zip file created when ready for publication
 	"projectName": "myUniqueProjectName",
   "images": [{
     "src": "image-one.png",

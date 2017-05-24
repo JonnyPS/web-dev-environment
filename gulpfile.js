@@ -18,22 +18,12 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 // allows gulp to return a file
 var data = require('gulp-data');
-var swig = require('gulp-swig');
-
+// renders a nunjucks template
 var nunjucksRender = require('gulp-nunjucks-render');
-
+// creates a zip file from other files
 var archiver = require('gulp-archiver');
-var i = 1;
-const debug = require('gulp-debug');
-
-var fs = require('fs');
-var json = JSON.parse(fs.readFileSync('./app/content/data.json'));
-
-
-
+// read data from a json file
 var packageJSON = require('./app/content/data.json')
-
-
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
@@ -61,7 +51,7 @@ gulp.task('browserSync', function() {
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
   .pipe(useref())
-  // // Minifies only if it's a JavaScript file
+  // // Minifies only if it's a JavaScript or a css file
   .pipe(gulpIf('*.js', uglify()))
   .pipe(gulpIf('*.css', cssnano()))
   .pipe(gulp.dest('dist'))
@@ -74,7 +64,7 @@ gulp.task('images', function(){
   .pipe(gulp.dest('dist/images'))
 });
 
-
+// accesses json files for the nunjucks template to read, renders nunjucks file
 gulp.task('nunjucks', function() {
   return gulp.src('app/templates/*.+(html|nunjucks)')
     // Adding data to Nunjucks
@@ -91,16 +81,6 @@ gulp.task('nunjucks', function() {
     }))
 });
 
-gulp.task('zip', function () {
-    return gulp.src('dist/**')
-    .pipe(data(function() {
-      return require('./app/content/data.json')
-    }))
-    .pipe(archiver(packageJSON.projectName + '.zip'))
-    .pipe(gulp.dest('./dist'));
-});
-
-
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
@@ -109,11 +89,15 @@ gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
 
-// refer to evalue.
-// recompile js before wathcing
-// add a manifest.js file
-
-// running 'gulp' will run the gulp default task.
-// this in turn can run all the other gulp tasks if the user defines them
-gulp.task('default', ['watch', 'useref', 'images']);
+// run 'gulp build' when ready for publication
+gulp.task('build', ['nunjucks', 'useref', 'images'], function() {
+  // waits for all other tasks to finish, then zips up the dist folder contents
+  return gulp.src('dist/**')
+  .pipe(data(function() {
+    return require('./app/content/data.json')
+  }))
+  // gives the zip file the name of the key value 'projectName' in the json file
+  .pipe(archiver(packageJSON.projectName + '.zip'))
+  .pipe(gulp.dest('./dist'));
+});
 
