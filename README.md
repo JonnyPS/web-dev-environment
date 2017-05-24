@@ -11,7 +11,14 @@ This will develop over time but currently includes the following features.
 - Live reloading with BrowserSync
 - Integration of Nunjucks templating language to import JSON data in to HTML
 
-### *Gulp tasks*
+## Setting up the environment
+
+Clone this project to your local environment.
+Open terminal and run gulp watch to get started.
+
+**Folder Structure**
+Work only in the *app* folder.
+When ready for publication use only the contents of the *dist* folder.
 
 ### Gulp Watch
 
