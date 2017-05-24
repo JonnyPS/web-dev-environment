@@ -5,9 +5,9 @@ This will develop over time but currently includes the following features.
 - Uses Gulp task runner to:
   - Compile SASS
   - Minify CSS and Javascript
-  - Concatonate multiple Javascript files
+  - Concatonate multiple CSS and Javascript files
   - Compress images
-  - Exports finished output to a different directory
+  - Exports finished output to a 'dist' folder
   - Zips all content ready for publication
 - Live reloading with BrowserSync
 - Integration of Nunjucks templating language to import JSON data in to HTML
@@ -23,8 +23,8 @@ The *dist* folder is used for publication only.
 
 ### Gulp Watch
 
-Run **gulp watch** in the terminal to start browserSync, and watch for any changes to the sass, js or nunjucks templates
-The browser will refresh to render the new view upon any change
+Run **gulp watch** in the terminal when developing. This runs browserSync, and watches for any changes to the sass, js or nunjucks templates.
+The browser will refresh to render the new view upon any saved change.
 
 ### Gulp build
 
