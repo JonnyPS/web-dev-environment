@@ -26,6 +26,13 @@ var archiver = require('gulp-archiver');
 var i = 1;
 const debug = require('gulp-debug');
 
+var fs = require('fs');
+var json = JSON.parse(fs.readFileSync('./app/content/data.json'));
+
+
+
+var packageJSON = require('./app/content/data.json')
+
 
 
 gulp.task('sass', function() {
@@ -37,7 +44,7 @@ gulp.task('sass', function() {
   .pipe(gulp.dest('app/css'))
   .pipe(browserSync.reload({
     stream: true
-  }))
+  }))  
 });
 
 // use browserSync to refresh the browser using the contents of the app folder
@@ -85,11 +92,11 @@ gulp.task('nunjucks', function() {
 });
 
 gulp.task('zip', function () {
-    return gulp.src('app/**')
+    return gulp.src('dist/**')
     .pipe(data(function() {
       return require('./app/content/data.json')
     }))
-    .pipe(archiver(projectName + '.zip'))
+    .pipe(archiver(packageJSON.projectName + '.zip'))
     .pipe(gulp.dest('./dist'));
 });
 
