@@ -17,6 +17,22 @@ This will develop over time but currently includes the following features.
 Clone this project to your local environment.
 Open terminal and run **gulp watch** to get started.
 
+### Install
+run **npm install** and install gulp globally; **npm install gulp -g** 
+Navigate into the directory
+Install gulp into the project **npm install gulp --save-dev**
+The following dependencies are required to run the project:
+- gulp-sass
+- browser-sync
+- gulp-useref
+- gulp uglify
+- gulp-cssnano
+- gulp-imagemin
+- gulp-cache
+- npm del
+- 
+
+
 ### Folder Structure
 The *app* folder is used for development purposes only.<br>
 The *dist* folder is used for publication only.
@@ -31,3 +47,4 @@ The browser will refresh to render the new view upon any saved change.
 Run **gulp build** in the terminal once you're ready to deploy the project.
 This ensures everything is optimised.
 Javascript and css files are concatonated and minified, images are compressed and a zip file of all dist folder files is created.
+
