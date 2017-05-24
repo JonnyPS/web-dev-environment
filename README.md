@@ -11,7 +11,7 @@ This will develop over time but currently includes the following features.
 - Live reloading with BrowserSync
 - Integration of Nunjucks templating language to import JSON data in to HTML
 
-## Gulp tasks
+### *Gulp tasks*
 
 ### Gulp Watch
 
