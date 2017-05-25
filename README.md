@@ -18,8 +18,8 @@ Clone this project to your local environment.
 Open terminal and run **gulp watch** to get started.
 
 ### Install
-Install gulp globally; **npm install gulp -g** 
-Install gulp into the project **npm install gulp --save-dev**
+Install gulp globally; **npm install gulp -g**<br>
+Install gulp into the project **npm install gulp --save-dev**<br>
 run **npm install**
 
 ### Folder Structure
