@@ -24,10 +24,20 @@ var nunjucksRender = require('gulp-nunjucks-render');
 var archiver = require('gulp-archiver');
 // read data from a json file
 var packageJSON = require('./app/content/data.json')
+// displays errors in the terminal in a very readable way
+var prettyError = require('gulp-prettyerror');
+
+var clean = require('gulp-clean');
+
+gulp.task('clean', function() {
+   return gulp.src('dist', {read: false})
+  .pipe(clean());
+})
 
 gulp.task('sass', function() {
   // return any scss files in the scss folder
   return gulp.src('app/scss/*.scss')
+  .pipe(prettyError())
   // run the complier task
   .pipe(sass())
   // output css to the css foldercss
@@ -81,6 +91,15 @@ gulp.task('nunjucks', function() {
     }))
 });
 
+var gulpCopy = require('gulp-copy');
+var filesToMove = './app/**';
+
+
+gulp.task('copyFolder', function() {
+  return gulp.src(filesToMove, { base: './'} )
+  .pipe(gulp.dest('dist'));
+})
+
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
@@ -90,7 +109,7 @@ gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
 })
 
 // run 'gulp build' when ready for publication
-gulp.task('build', ['nunjucks', 'useref', 'images'], function() {
+gulp.task('build', ['clean', 'nunjucks', 'useref', 'images'], function() {
   // waits for all other tasks to finish, then zips up the dist folder contents
   return gulp.src('dist/**')
   .pipe(data(function() {

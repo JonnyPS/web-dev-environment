@@ -1,4 +1,4 @@
-# A simple web development work environment<br>to speed up general processes.
+# A simple ad development work environment<br>to speed up general processes.
 
 This will develop over time but currently includes the following features.
 
@@ -18,8 +18,6 @@ Clone this project to your local environment.
 Open terminal and run **gulp watch** to get started.
 
 ### Install
-Install gulp globally; **npm install gulp -g**<br>
-Install gulp into the project **npm install gulp --save-dev**<br>
 run **npm install**
 
 ### Folder Structure

@@ -23,40 +23,13 @@
 
 
 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
+    <p>Project Name is: {{ projectName }}</p>
+    <p>Header One is: {{ copy.headerOne }}</p> 
+    <p>Header Two is: {{ copy.headerTwo }}</p> 
+    <p>Width = {{ formats.MPU.width }}</p> 
+    <p>Height = {{ formats.MPU.height }}</p> 
  
 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-  <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-
- 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-  <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-
- 
-    <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-  <p>{{ images[0].src }}</p>
-    <p>{{ images[0].alt }}</p> 
- 
-
- 
 
 
 

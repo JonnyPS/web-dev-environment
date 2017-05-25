@@ -1,11 +1,21 @@
 {
-	"projectName": "myUniqueProjectName",
-  "images": [{
-    "src": "image-one.png",
-    "alt": "Image one alt text"
-  }, {
-    "src": "image-two.png",
-    "alt": "Image two alt text"
-  }],
-  "test": "this is text"
+	"projectName": "MPU",
+  "copy": {
+    "headerOne": "This is header one",
+    "headerTwo": "This is header two"
+  }, 
+  "formats": {
+  	"MPU": {
+  		"width": "300",
+  		"height": "250"
+  	},
+  	"HFPG": {
+  		"width": "300",
+  		"height": "600"
+  	},
+  	"LB": {
+  		"width": "728",
+  		"height": "90"
+  	}
+  }
 }
