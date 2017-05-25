@@ -26,9 +26,10 @@ var archiver = require('gulp-archiver');
 var packageJSON = require('./app/content/data.json')
 // displays errors in the terminal in a very readable way
 var prettyError = require('gulp-prettyerror');
-
+// deletes everything in a specified folder
 var clean = require('gulp-clean');
 
+// deletes everything in a specified folder this runs prior to building for production to ensure there are no unwanted files
 gulp.task('clean', function() {
    return gulp.src('dist', {read: false})
   .pipe(clean());
@@ -91,15 +92,6 @@ gulp.task('nunjucks', function() {
     }))
 });
 
-var gulpCopy = require('gulp-copy');
-var filesToMove = './app/**';
-
-
-gulp.task('copyFolder', function() {
-  return gulp.src(filesToMove, { base: './'} )
-  .pipe(gulp.dest('dist'));
-})
-
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
@@ -111,11 +103,8 @@ gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
 // run 'gulp build' when ready for publication
 gulp.task('build', ['clean', 'nunjucks', 'useref', 'images'], function() {
   // waits for all other tasks to finish, then zips up the dist folder contents
-  return gulp.src('dist/**')
-  .pipe(data(function() {
-    return require('./app/content/data.json')
-  }))
   // gives the zip file the name of the key value 'projectName' in the json file
+  return gulp.src('dist/**')
   .pipe(archiver(packageJSON.projectName + '.zip'))
   .pipe(gulp.dest('./dist'));
 });
