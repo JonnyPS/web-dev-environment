@@ -18,20 +18,9 @@ Clone this project to your local environment.
 Open terminal and run **gulp watch** to get started.
 
 ### Install
-run **npm install** and install gulp globally; **npm install gulp -g** 
-Navigate into the directory
+Install gulp globally; **npm install gulp -g** 
 Install gulp into the project **npm install gulp --save-dev**
-The following dependencies are required to run the project:
-- gulp-sass
-- browser-sync
-- gulp-useref
-- gulp uglify
-- gulp-cssnano
-- gulp-imagemin
-- gulp-cache
-- npm del
-- 
-
+run **npm install**
 
 ### Folder Structure
 The *app* folder is used for development purposes only.<br>
