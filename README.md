@@ -38,4 +38,5 @@ The *app* folder is used for development purposes only.<br>
 The *dist* folder is used for publication only.
 
 ### Nunjucks
+To update the HTML, only the nunjucks file in the templates folder needs to be amended.
 Nunjucks templating language is used to import text from a JSON file as banner copy, without changing the HTML file.
