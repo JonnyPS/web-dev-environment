@@ -28,7 +28,17 @@ var packageJSON = require('./app/content/data.json')
 var prettyError = require('gulp-prettyerror');
 // deletes everything in a specified folder
 var clean = require('gulp-clean');
+// checks version of gulp modules
+var modulesVersionCheck = require('gulp-modules-version-check');
 
+
+gulp.task('modules', function() {
+  return gulp.src('./app/**')
+    .pipe(modulesVersionCheck({
+      update: true,
+      match: /gul/
+    }));
+});
 // deletes everything in a specified folder this runs prior to building for production to ensure there are no unwanted files
 gulp.task('clean', function() {
    return gulp.src('dist', {read: false})
