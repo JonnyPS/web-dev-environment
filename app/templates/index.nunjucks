@@ -20,20 +20,11 @@
     <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
     <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
     <img id="turtle" src="images/turtle.jpg" alt="turtle picture" />
-
-
-
-    <p>Project Name is: {{ projectName }}</p>
-    <p>Header One is: {{ copy.headerOne }}</p> 
-    <p>Header Two is: {{ copy.headerTwo }}</p> 
-    <p>Width = {{ formats.MPU.width }}</p> 
-    <p>Height = {{ formats.MPU.height }}</p> 
- 
-
-
-
-
-
-  
+    <p>Project Name is: {{ MPU.projectName }}</p>
+    <p>Header One is: {{ MPU.copy.headerOne }}</p> 
+    <p>Header Two is: {{ MPU.copy.headerTwo }}</p> 
+    <p>Header Three is: {{ MPU.copy.headerThree }}</p> 
+    <p>CTA is: {{ MPU.copy.CTA }}</p> 
+    <p>Disclaimer is: {{ MPU.copy.disclaimer }}</p> 
   </body>
 </html>

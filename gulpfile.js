@@ -28,21 +28,9 @@ var packageJSON = require('./app/content/data.json')
 var prettyError = require('gulp-prettyerror');
 // deletes everything in a specified folder
 var clean = require('gulp-clean');
-// checks version of gulp modules
-var modulesVersionCheck = require('gulp-modules-version-check');
-
-var series = require('gulp-series');
-
+// ensures tasks are run consecutively, not concurrently
 var runSequence = require('run-sequence');
 
-
-gulp.task('modules', function() {
-  return gulp.src('./app/**')
-    .pipe(modulesVersionCheck({
-      update: true,
-      match: /gul/
-    }));
-});
 // deletes everything in a specified folder this runs prior to building for production to ensure there are no unwanted files
 gulp.task('clean', function() {
    return gulp.src('dist', {read: false})
@@ -106,18 +94,12 @@ gulp.task('nunjucks', function() {
     }))
 });
 
-// gulp.task('build', gulp.series('clean', 'nunjucks', 'useref', 'images', 'sass', 'archiver'))
-
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
-  gulp.watch('app/scss/*.scss', ['sass']); 
+  gulp.watch('archiverpp/scss/*.scss', ['sass']); 
   gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
-  // gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
-
-
-
 
 gulp.task('archiver', function() {
   // waits for all other tasks to finish, then zips up the dist folder contents
@@ -130,7 +112,7 @@ gulp.task('archiver', function() {
 // run 'gulp build' when ready for publication
 gulp.task('build', function() {
  runSequence('clean',
-            ['nunjucks', 'useref', 'images'],
+            ['nunjucks', 'useref', 'images', 'sass'],
             'archiver');
 });
 

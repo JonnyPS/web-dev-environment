@@ -1,1 +1,1 @@
-console.log('this is the partial file');
+console.log('this is the partial file - this will be concatonated with the main js file upon publication');

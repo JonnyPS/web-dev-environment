@@ -1,10 +1,2 @@
-console.log('hello')
+console.log('This is the main js file, it will be concatonated wth the partial js file on publication')
 
-var arr = ['These', 'are', 'contents', 'of', 'an', 'array'];
-
-// for ( var i = 0; i < arr.length; i++ ) {
-//   console.log('hello loop')
-//   console.log(arr[i])
-
-  // document.getElementById('demo').innerHTML = arr[i];
-// }
