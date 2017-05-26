@@ -1,4 +1,21 @@
 $fontFamily: helvetica, arial, sans-serif;
+$mpuWidth: 300px;
+$mpuHeight: 250px;
+$paraSize: 14px;
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: $fontFamily;
+}
+
+p {
+  font-size: $paraSize;
+}
+
+#projectName {
+  position: absolute;
+  top: $mpuHeight + 20px;
+  margin-left: 20px;
+}
 
 .testing {
   width: percentage(2/7);
@@ -14,5 +31,14 @@ h2 {
 #turtle {
   width: 150px;
   height:150px;
+  border: black solid 1px;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $mpuWidth;
+  height: $mpuHeight;
   border: black solid 1px;
 }

@@ -96,7 +96,7 @@ gulp.task('nunjucks', function() {
 
 // use gulp to watch files, when files are saved gulp will automatically compile the scss to css
 gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
-  gulp.watch('archiverpp/scss/*.scss', ['sass']); 
+  gulp.watch('app/scss/*.scss', ['sass']); 
   gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
 })
