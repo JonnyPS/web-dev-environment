@@ -20,13 +20,6 @@ Open terminal and run **gulp watch** to get started.
 ### Install
 Run **npm install**
 
-### Folder Structure
-The *app* folder is used for development purposes only.<br>
-The *dist* folder is used for publication only.
-
-### Nunjucks
-Nunjucks templating language is used to import text from a JSON file as banner copy, without changing the HTML file.
-
 ### Gulp Watch
 
 Run **gulp watch** in the terminal when developing. This runs browserSync, and watches for any changes to the sass, js or nunjucks templates.
@@ -38,3 +31,11 @@ Run **gulp build** in the terminal once you're ready to deploy the project.
 This ensures everything is optimised.
 Javascript and css files are concatonated and minified, images are compressed and a zip file of all dist folder files is created.
 
+## Notes
+
+### Folder Structure
+The *app* folder is used for development purposes only.<br>
+The *dist* folder is used for publication only.
+
+### Nunjucks
+Nunjucks templating language is used to import text from a JSON file as banner copy, without changing the HTML file.
