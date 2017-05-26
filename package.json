@@ -24,10 +24,12 @@
     "gulp-nunjucks-render": "^2.2.1",
     "gulp-prettyerror": "^1.2.1",
     "gulp-sass": "^3.1.0",
+    "gulp-series": "^1.0.2",
     "gulp-swig": "^0.8.0",
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.2",
     "node-useref": "^0.3.15",
+    "run-sequence": "^1.2.2",
     "useref": "^1.2.0"
   },
   "dependencies": {
