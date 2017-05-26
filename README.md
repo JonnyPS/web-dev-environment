@@ -25,8 +25,7 @@ The *app* folder is used for development purposes only.<br>
 The *dist* folder is used for publication only.
 
 ### Nunjucks
-Nunjucks templating language is used to import text from a JSON file as banner copy.
-This way, you can have a different object for every format of banner, and import the relevent text over for each one. This allows for changes across the board by changing only the one JSON file.
+Nunjucks templating language is used to import text from a JSON file as banner copy, without changing the HTML file.
 
 ### Gulp Watch
 
