@@ -2,6 +2,7 @@ $fontFamily: helvetica, arial, sans-serif;
 $mpuWidth: 300px;
 $mpuHeight: 250px;
 $paraSize: 14px;
+$backgroundColor: #aeaeae;
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: $fontFamily;
@@ -9,6 +10,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 p {
   font-size: $paraSize;
+  margin-left:5px;
 }
 
 #projectName {
@@ -41,4 +43,14 @@ h2 {
   width: $mpuWidth;
   height: $mpuHeight;
   border: black solid 1px;
+  background-color: $backgroundColor;
+}
+
+#box {
+  position: absolute;
+  top: 320px;
+  left: 320px;
+  height:50px;
+  width:50px;
+  background-color: green;
 }
