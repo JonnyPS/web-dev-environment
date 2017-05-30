@@ -1,32 +1,10 @@
 {
-  "MPU": {
-  	"projectName": "MPU",
-    "copy": {
-      "headerOne": "This is the MPU header one",
-      "headerTwo": "This is the MPU header two",
-      "headerThree": "This is the MPU header three",
-      "CTA": "This is the MPU CTA",
-      "disclaimer": "This is the MPU disclaimer"
-    }
-  },
-  "HFPG": {
-    "projectName": "HFPG",
-    "copy": {
-      "headerOne": "This is the HFPG header one",
-      "headerTwo": "This is the HFPG header two",
-      "headerThree": "This is the HFPG header three",
-      "CTA": "This is the HFPG CTA",
-      "disclaimer": "This is the HFPG disclaimer"
-    }
-  },
-  "LB": { 
-    "projectName": "LB",
-    "copy": {
-      "headerOne": "This is the LB header one",
-      "headerTwo": "This is the LB header two",
-      "headerThree": "This is the LB header three",
-      "CTA": "This is the LB CTA",
-      "disclaimer": "This is the LB disclaimer"
-    }
+	"projectName": "MPU",
+  "copy": {
+    "headerOne": "First Header",
+    "headerTwo": "Second Header",
+    "headerThree": "Third Header",
+    "CTA": "This is the CTA",
+    "disclaimer": "This is the disclaimer"
   }
 }

@@ -7,25 +7,22 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/para-styles.css">
     <!--endbuild-->
-    </script>
-
-  </head>
-  <body>
-    <div id="container">
-        <h3 id="projectName">Project Name is: {{ MPU.projectName }}</h3>
-        <p id="headerOne">Header One is: {{ MPU.copy.headerOne }}</p> 
-        <p id="headerTwo">Header Two is: {{ MPU.copy.headerTwo }}</p> 
-        <p id="headerThree">Header Three is: {{ MPU.copy.headerThree }}</p> 
-        <p>CTA is: {{ MPU.copy.CTA }}</p> 
-        <p>Disclaimer is: {{ MPU.copy.disclaimer }}</p> 
-    </div>
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineMax.min.js">
-    -->
-    <script src="js/loadFiles.js"></script>
     <!--build:js js/main.min.js -->
+    <script src="js/loadFiles.js"></script>
     <script src="js/partial.js"></script>
     <script src="js/main.js"></script>
     <!-- endbuild -->
+    </script>
+  </head>
+  <body>
+    <div id="container">
+        <h1 class="header" id="headerOne">{{ copy.headerOne }}</h1> 
+        <h1 class="header" id="headerTwo">{{ copy.headerTwo }}</h1> 
+        <h1 class="header" id="headerThree">{{ copy.headerThree }}</h1> 
+        <img class="logo" src="images/html5-logo.png" alt="html5 logo" />
+        <img class="logo" src="images/css3-logo.png" alt="css3 logo" />
+        <img class="logo" src="images/js-logo.png" alt="js logo" />
+        <p id="disclaimer">{{ copy.disclaimer }}</p> 
+    </div>
   </body>
 </html>

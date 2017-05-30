@@ -1,28 +1,38 @@
 h1, h2, h3, h4, h5, h6, p {
-  font-family: helvetica, arial, sans-serif; }
+  font-family: helvetica, arial, sans-serif;
+  padding: 0;
+  margin: 0; }
 
-p {
-  font-size: 14px;
-  margin-left: 5px; }
-
-#projectName {
-  position: absolute;
-  top: 270px;
-  margin-left: 20px; }
-
-.testing {
-  width: 28.57143%; }
+h1 {
+  margin-left: 10px; }
 
 h2 {
   font-family: helvetica, arial, sans-serif;
   color: #000;
-  background-color: yellow;
-  padding-left: 20px; }
+  background-color: yellow; }
 
-#turtle {
-  width: 150px;
-  height: 150px;
-  border: black solid 1px; }
+p {
+  font-size: 10px; }
+
+#headerOne, #headerTwo, #headerThree, #CTA {
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  opacity: 0; }
+
+#headerOne {
+  top: 25px; }
+
+#headerTwo {
+  top: 55px; }
+
+#headerThree {
+  top: 85px; }
+
+#disclaimer {
+  position: absolute;
+  bottom: 5px;
+  margin-left: 10px; }
 
 #container {
   position: absolute;
@@ -31,12 +41,14 @@ h2 {
   width: 300px;
   height: 250px;
   border: black solid 1px;
-  background-color: #aeaeae; }
+  background-color: #fff; }
 
-#box {
-  position: absolute;
-  top: 320px;
-  left: 320px;
-  height: 50px;
-  width: 50px;
-  background-color: green; }
+.logo {
+  float: left;
+  margin-top: 140px;
+  margin-right: 15px;
+  margin-left: 10px;
+  height: 60px;
+  width: auto;
+  display: block;
+  opacity: 0; }

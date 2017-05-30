@@ -99,6 +99,7 @@ gulp.task('watch', ['nunjucks', 'browserSync', 'sass'], function() {
   gulp.watch('app/scss/*.scss', ['sass']); 
   gulp.watch('app/templates/*.+(html|nunjucks)', ['nunjucks']); 
   gulp.watch('app/js/*.js', browserSync.reload); 
+  gulp.watch('app/content/*.json', browserSync.reload); 
 })
 
 gulp.task('archiver', function() {
