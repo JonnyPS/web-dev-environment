@@ -4,12 +4,14 @@ $mpuHeight: 250px;
 $paraSize: 10px;
 $backgroundColor: #aeaeae;
 $leftMargin: 10px;
+$gradientDark: #d8d8d8;
+$gradientMedium: #f2f2f2;
+$gradientLight: #fff;
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: $fontFamily;
-   padding: 0;
+  padding: 0;
   margin: 0;}
-
 
 h1 {
   margin-left: $leftMargin;
@@ -57,7 +59,11 @@ p {
   width: $mpuWidth;
   height: $mpuHeight;
   border: black solid 1px;
-  background-color: #fff;
+  background: #fff;
+  background: -webkit-linear-gradient(right top, $gradientDark, $gradientMedium, $gradientLight); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom left, $gradientDark, $gradientMedium, $gradientLight); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom left, $gradientDark, $gradientMedium, $gradientLight); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom left, $gradientDark, $gradientMedium, $gradientLight); /* Standard syntax */
 }
 
 .logo {

@@ -1,4 +1,7 @@
+// This file ensures that the greensock library is loaded before the animation tries to play
+// Any other files that you wish to load before anything is triggered, you can add them to the scripts[];
 var i = 0;
+
 function loadScripts() {
 	console.log("loadscripts");
 
