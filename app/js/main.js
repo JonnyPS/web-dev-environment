@@ -10,5 +10,6 @@ function initAd() {
     var tl = new TimelineMax({paused:false});
     tl.staggerTo('.header', 2, {alpha:1, delay:0}, slowReveal);
     tl.staggerTo('.logo', 2, {alpha:1, delay:0}, quickReveal);
+    // add to timeline here
 }
 
